@@ -1,9 +1,7 @@
 import React, { useCallback } from "react";
-import down from "../public/down.svg";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import Image from "next/image";
-Image
 
 function Hero() {
   const particlesInit = useCallback(async (engine) => {
@@ -35,9 +33,15 @@ function Hero() {
         />
         <div className="p-10 text-center">
           <h1 className="font-silkscreen text-6xl">Ayush Mishra</h1>
-          <h3 className="font-mono p-5">student | developer | engineer</h3>
+          <h3 className="font-mono p-5">
+            Generalist Developer - Fueled by Curiosity
+          </h3>
         </div>
-        <Image src={down} alt="down" className="animate-bounce" />
+        <img
+          src="down.svg"
+          style={{ fill: "white" }}
+          className="animate-bounce absolute bottom-0 "
+        />
 
       </div>
     </div>
