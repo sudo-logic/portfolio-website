@@ -2,7 +2,7 @@ import React from "react";
 
 function stack() {
   return (
-    <div>
+    <div id="stack">
       {" "}
       <div className="flex flex-col w-full justify-between px-20 py-10 rounded-md ">
         <div>
