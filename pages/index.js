@@ -2,6 +2,7 @@ import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 import Stack from "../components/stack";
 import Contact from "../components/contact";
+import Footer from "../components/footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
           <Hero />
           <Stack />
           <Contact />
+          <Footer />
         </div>
       </div>
     </body>
