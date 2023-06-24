@@ -7,7 +7,7 @@ function stack() {
       <div className="flex flex-col w-full justify-between px-20 py-10 rounded-md ">
         <div>
           <h1 className="font-thin text-4xl font-mono tracking-tighter">
-            My Tech Stack
+            Tech Stack
           </h1>
           <h3 className="text-base font-light pr-20"></h3>
         </div>
@@ -117,18 +117,18 @@ function stack() {
         Learning and Cyber Security.
       </h3> */}
           <h1 className="font-thin text-4xl font-mono tracking-tighter">
-            My GitHub Stats
+            GitHub Stats
           </h1>
           <h3 className="text-base font-light pr-20"></h3>
         </div>
 
         <div className="flex flex-col basis-1/2 items-center justify-center w-full">
-          <div>
+          {/* <div>
             <img
               className=""
-              src="https://github-readme-stats.vercel.app/api?username=sudo-logic&show_icons=true&theme=gotham&hide_border=true&count_private=true"
+              src="https://github-readme-stats.vercel.app/api?username=sudo-logic&show_icons=true&theme=gotham&hide_border=true&include_all_commits=true&count_private=true"
             />
-          </div>
+          </div> */}
           <div>
             <img
               className=""
