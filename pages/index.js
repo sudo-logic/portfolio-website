@@ -29,7 +29,7 @@ export default function Home() {
           content="https://ayush-mishra.vercel.app/ayush.jpg"
         />
 
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <meta property="twitter:domain" content="ayush-mishra.vercel.app" />
         <meta
           property="twitter:url"
