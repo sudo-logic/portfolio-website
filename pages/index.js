@@ -3,11 +3,12 @@ import Navbar from "../components/navbar";
 import Stack from "../components/stack";
 import Contact from "../components/contact";
 import Footer from "../components/footer";
+import { Head } from "next/document";
 
 export default function Home() {
   return (
     <>
-      <head>
+      <Head>
         <title>Ayush Mishra</title>
 
         {/* Meta Tags */}
@@ -44,8 +45,8 @@ export default function Home() {
           content="https://ayush-mishra.vercel.app/ayush.jpg"
         />
         <meta name="google-site-verification" content="bbSA7OJb0vKJxeoj_Jan3viz1UWmRS4iEt9E3r5aCPM" />
-      </head>
-      <body className="bg-black min-h-screen text-white ">
+      </Head>
+      <main className="bg-black min-h-screen text-white ">
         <div className="max-w-4xl mx-auto">
           <Navbar />
           <div className="divide-y divide-zinc-600">
@@ -55,7 +56,7 @@ export default function Home() {
             <Footer />
           </div>
         </div>
-      </body>
+      </main>
     </>
   );
 }
