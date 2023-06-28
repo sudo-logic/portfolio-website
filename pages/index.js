@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <head>
-        <title>Ayush mishra</title>
+        <title>Ayush Mishra</title>
 
         {/* Meta Tags */}
         <meta
