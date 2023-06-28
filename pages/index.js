@@ -3,7 +3,7 @@ import Navbar from "../components/navbar";
 import Stack from "../components/stack";
 import Contact from "../components/contact";
 import Footer from "../components/footer";
-import { Head } from "next/document";
+import Head from "next/head";
 
 export default function Home() {
   return (
