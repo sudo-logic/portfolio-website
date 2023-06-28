@@ -43,6 +43,7 @@ export default function Home() {
           name="twitter:image"
           content="https://ayush-mishra.vercel.app/ayush.jpg"
         />
+        <meta name="google-site-verification" content="bbSA7OJb0vKJxeoj_Jan3viz1UWmRS4iEt9E3r5aCPM" />
       </head>
       <body className="bg-black min-h-screen text-white ">
         <div className="max-w-4xl mx-auto">
