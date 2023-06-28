@@ -6,16 +6,55 @@ import Footer from "../components/footer";
 
 export default function Home() {
   return (
-    <body className="bg-black min-h-screen text-white ">
-      <div className="max-w-4xl mx-auto">
-        <Navbar />
-        <div className="divide-y divide-zinc-600">
-          <Hero />
-          <Stack />
-          <Contact />
-          <Footer />
+    <>
+      <head>
+        <title>Ayush mishra</title>
+
+        {/* Meta Tags */}
+        <meta
+          name="description"
+          content="I'm a B.Tech CSE student with a passion for backend development, DevOps and upcoming technologies."
+        />
+
+        <meta property="og:url" content="https://ayush-mishra.vercel.app" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Ayush Mishra" />
+        <meta
+          property="og:description"
+          content="I'm a B.Tech CSE student with a passion for backend development, DevOps and upcoming technologies."
+        />
+        <meta
+          property="og:image"
+          content="https://ayush-mishra.vercel.app/ayush.jpg"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="ayush-mishra.vercel.app" />
+        <meta
+          property="twitter:url"
+          content="https://ayush-mishra.vercel.app"
+        />
+        <meta name="twitter:title" content="Ayush mishra" />
+        <meta
+          name="twitter:description"
+          content="I'm a B.Tech CSE student with a passion for backend development, DevOps and upcoming technologies."
+        />
+        <meta
+          name="twitter:image"
+          content="https://ayush-mishra.vercel.app/ayush.jpg"
+        />
+      </head>
+      <body className="bg-black min-h-screen text-white ">
+        <div className="max-w-4xl mx-auto">
+          <Navbar />
+          <div className="divide-y divide-zinc-600">
+            <Hero />
+            <Stack />
+            <Contact />
+            <Footer />
+          </div>
         </div>
-      </div>
-    </body>
+      </body>
+    </>
   );
 }
