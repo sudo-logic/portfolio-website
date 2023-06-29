@@ -48,6 +48,7 @@ function Hero() {
               src="down.svg"
               style={{ fill: "white" }}
               className="animate-bounce absolute bottom-0"
+              alt="Scroll Down for more!"
             />
           </a>
         )}
