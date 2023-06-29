@@ -46,9 +46,9 @@ function Hero() {
 
         <div className="p-10 text-center">
           <h1 className="font-silkscreen text-6xl">Ayush Mishra</h1>
-          <h3 className="font-mono p-5">
+          <h2 className="font-mono p-5">
             Generalist Developer - Fueled by Curiosity
-          </h3>
+          </h2>
         </div>
         {scrollPosition < 100 && (
           <a href="#about" className="absolute bottom-0 animate-bounce">
