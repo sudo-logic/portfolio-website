@@ -31,11 +31,22 @@ function Hero() {
         init={particlesInit}
       />
       <div className="relative h-screen flex flex-col items-center justify-center">
-        <img
-          src="ayush.jpg"
-          alt="Avatar"
-          className="w-1/3 rounded-full mx-auto"
-        />
+        {/* <img src="ayush.jpg" alt="Avatar" className="w-1/3 rounded-full " /> */}
+
+        <div
+          className="relative w-1/3 "
+        >
+          <Image
+            src="/ayush.jpg"
+            alt="Ayush"
+            width="100%"
+            height="100%"
+            layout="responsive"
+            objectFit="contain"
+            className="rounded-full"
+          />
+        </div>
+
         <div className="p-10 text-center">
           <h1 className="font-silkscreen text-6xl">Ayush Mishra</h1>
           <h3 className="font-mono p-5">
