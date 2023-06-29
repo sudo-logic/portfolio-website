@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import Particles from "react-particles";
+import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,7 +23,7 @@ function Hero() {
   }, []);
 
   return (
-    <div>
+    <div className="flex justify-center">
       <Particles
         id="tsparticles"
         className="absolute top-0 left-0 w-full h-full"
@@ -31,11 +31,7 @@ function Hero() {
         init={particlesInit}
       />
       <div className="relative h-screen flex flex-col items-center justify-center">
-        {/* <img src="ayush.jpg" alt="Avatar" className="w-1/3 rounded-full " /> */}
-
-        <div
-          className="relative w-1/3 "
-        >
+        <div className="relative w-1/3">
           <Image
             src="/ayush.jpg"
             alt="Ayush"
@@ -44,6 +40,7 @@ function Hero() {
             layout="responsive"
             objectFit="contain"
             className="rounded-full"
+            priority={true}
           />
         </div>
 
@@ -54,11 +51,9 @@ function Hero() {
           </h3>
         </div>
         {scrollPosition < 100 && (
-          <a href="#stack">
+          <a href="#about" className="absolute bottom-0 animate-bounce">
             <img
               src="down.svg"
-              style={{ fill: "white" }}
-              className="animate-bounce absolute bottom-0"
               alt="Scroll Down for more!"
             />
           </a>
