@@ -36,6 +36,22 @@ function Hero() {
           <h2 className="font-mono p-5">
             Generalist Developer - Fueled by Curiosity
           </h2>
+          <div className="flex justify-center gap-4">
+            <a
+              className="cursor-pointer border p-3 "
+              href="mailto:ayu.mis2228@gmail.com"
+            >
+              Contact
+            </a>
+            <a
+              className="cursor-pointer border p-3 "
+              href="https://drive.google.com/file/d/12tlFbHpnBxgUlCS7Glo_4_IyuEb8wid1/view?usp=drive_link"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Resume
+            </a>
+          </div>
           <Socials />
         </div>
       </div>
