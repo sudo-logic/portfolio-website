@@ -2,6 +2,8 @@ import Image from "next/image";
 import React, { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import ScrollDownIndicator from "./scroll-indicator";
+import Socials from "./socials";
 
 function Hero() {
   const particlesInit = useCallback(async (engine) => {
@@ -9,7 +11,7 @@ function Hero() {
   }, []);
 
   return (
-    <div className=" flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center h-screen">
       <Particles
         id="tsparticles"
         className="absolute top-0 left-0 w-screen h-full"
@@ -34,8 +36,10 @@ function Hero() {
           <h2 className="font-mono p-5">
             Generalist Developer - Fueled by Curiosity
           </h2>
+          <Socials />
         </div>
       </div>
+      <ScrollDownIndicator />
     </div>
   );
 }
