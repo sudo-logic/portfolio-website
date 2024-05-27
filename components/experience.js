@@ -26,7 +26,7 @@ export default function Experience({ experienceData }) {
           <h2 className="text-3xl font-silkscreen">Experience</h2>
         </div>
         <p>
-          Here's a summary of my professional experience in the tech industry:
+          {`Here's a summary of my professional experience in the tech industry:`}
         </p>
       </div>
       <div className="m-auto grid grid-cols-1 gap-10 justify-center md:grid-cols-2">

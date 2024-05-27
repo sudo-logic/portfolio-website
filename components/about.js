@@ -26,9 +26,9 @@ export default function About() {
           <h1 className="text-3xl font-silkscreen">About Me</h1>
         </div>
         <p>
-          I'm a passionate software engineer with a focus on building beautiful
+          {`I'm a passionate software engineer with a focus on building beautiful
           and functional web applications. I have experience working with a
-          variety of technologies, including:
+          variety of technologies, including:`}
         </p>
       </div>
       <div className="flex flex-wrap  justify-center">
