@@ -1,9 +1,10 @@
+import Head from "next/head";
+import React from "react";
+import Contact from "../components/contact";
+import Footer from "../components/footer";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 import Stack from "../components/stack";
-import Contact from "../components/contact";
-import Footer from "../components/footer";
-import Head from "next/head";
 
 export default function Home() {
   return (
@@ -44,7 +45,10 @@ export default function Home() {
           name="twitter:image"
           content="https://ayush-mishra.vercel.app/ayush.jpg"
         />
-        <meta name="google-site-verification" content="bbSA7OJb0vKJxeoj_Jan3viz1UWmRS4iEt9E3r5aCPM" />
+        <meta
+          name="google-site-verification"
+          content="bbSA7OJb0vKJxeoj_Jan3viz1UWmRS4iEt9E3r5aCPM"
+        />
       </Head>
       <main className="bg-black min-h-screen text-white ">
         <div className="max-w-4xl mx-auto">
