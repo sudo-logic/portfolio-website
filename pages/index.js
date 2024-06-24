@@ -1,18 +1,50 @@
 // @ts-nocheck
+import axios from "axios";
+import cheerio from "cheerio";
 import Head from "next/head";
 import React from "react";
 import About from "../components/about";
+import Blog from "../components/blogs";
 import Experience from "../components/experience";
 import Footer from "../components/footer";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
+
 const { Client } = require("@notionhq/client");
 
 export async function getStaticProps() {
-  // Initializing a client
+  // Initialize Notion client
   const notion = new Client({
     auth: process.env.NOTION_SECRET,
   });
+
+  // Function to scrape Dev.to
+  const scrapeDevto = async () => {
+    const url = "https://dev.to/logeek";
+    const { data } = await axios.get(url);
+    const $ = cheerio.load(data);
+
+    const articles = $(".crayons-story");
+    const blogs = [];
+
+    articles.each((index, element) => {
+      const title = $(element).find("h2").text().trim();
+      const link = $(element)
+        .find(".crayons-story__hidden-navigation-link")
+        .attr("href");
+      const tags = $(element)
+        .find(".crayons-tag")
+        .map((index, element) => $(element).text().trim())
+        .get();
+      blogs.push({
+        title,
+        link: `https://dev.to${link}`,
+        tags,
+      });
+    });
+
+    return blogs;
+  };
 
   // Retrieve experience data
   try {
@@ -20,13 +52,8 @@ export async function getStaticProps() {
       database_id: process.env.NOTION_PAGE,
     });
 
-    console.log("Experience data retrieved successfully:", response.results);
-
-    // Process the response and return the experience data
     const experienceData = response.results.map((result) => {
       return {
-        // | Company                         | Location                    | Role                    | Duration                  | Responsibilities                                                                 |
-
         company: result.properties.Company.title[0].plain_text,
         location: result.properties.Location.rich_text[0].plain_text,
         role: result.properties.Role.rich_text[0].plain_text,
@@ -36,18 +63,20 @@ export async function getStaticProps() {
       };
     });
 
-    console.log("Experience data retrieved successfully:", experienceData);
+    const blogData = await scrapeDevto();
 
     return {
       props: {
         experienceData,
+        blogData,
       },
     };
   } catch (error) {
-    console.error("Error retrieving experience data:", error);
+    console.error("Error retrieving data:", error);
     return {
       props: {
         experienceData: null,
+        blogData: null,
       },
     };
   }
@@ -64,7 +93,6 @@ export default function Home(props) {
           name="description"
           content="I'm a B.Tech CSE student with a passion for backend development, DevOps and upcoming technologies."
         />
-
         <meta property="og:url" content="https://ayush-mishra.vercel.app" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Ayush Mishra" />
@@ -76,7 +104,6 @@ export default function Home(props) {
           property="og:image"
           content="https://ayush-mishra.vercel.app/ayush.jpg"
         />
-
         <meta name="twitter:card" content="summary" />
         <meta property="twitter:domain" content="ayush-mishra.vercel.app" />
         <meta
@@ -97,10 +124,10 @@ export default function Home(props) {
           content="bbSA7OJb0vKJxeoj_Jan3viz1UWmRS4iEt9E3r5aCPM"
         />
       </Head>
-      <main className="bg-black min-h-screen text-white  ">
+      <main className="bg-black min-h-screen text-white">
         <div className="max-w-4xl mx-auto">
           <Navbar />
-          <div className="divide-y divide-zinc-600   font-mono ">
+          <div className="divide-y divide-zinc-600 font-mono">
             <Hero />
             <div className="py-20">
               <About />
@@ -108,9 +135,9 @@ export default function Home(props) {
             <div className="py-20">
               <Experience {...props} />
             </div>
-            {/* <div className="py-20">
-              <Contact />
-            </div> */}
+            <div className="py-20">
+              <Blog {...props} />
+            </div>
             <div className="">
               <Footer />
             </div>
