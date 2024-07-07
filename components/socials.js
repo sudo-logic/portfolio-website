@@ -1,5 +1,10 @@
 import React from "react";
-import { RiDiscordFill, RiGithubFill, RiTelegramFill } from "react-icons/ri";
+import {
+  RiDiscordFill,
+  RiGithubFill,
+  RiLinkedinFill,
+  RiTelegramFill,
+} from "react-icons/ri";
 
 const Socials = () => {
   return (
@@ -13,12 +18,12 @@ const Socials = () => {
         <RiGithubFill size={30} />
       </a>
       <a
-        href="https://telegram.me/eggxiety"
+        href="https://www.linkedin.com/in/ayush-mishra-srm/"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-white hover:text-blue-400 transition-transform duration-300 transform hover:scale-125"
+        className="text-white hover:text-indigo-400 transition-transform duration-300 transform hover:scale-125"
       >
-        <RiTelegramFill size={30} />
+        <RiLinkedinFill size={30} />
       </a>
       <a
         href="https://discord.com/users/381451271586185227"
@@ -27,6 +32,14 @@ const Socials = () => {
         className="text-white hover:text-indigo-400 transition-transform duration-300 transform hover:scale-125"
       >
         <RiDiscordFill size={30} />
+      </a>{" "}
+      <a
+        href="https://telegram.me/eggxiety"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white hover:text-blue-400 transition-transform duration-300 transform hover:scale-125"
+      >
+        <RiTelegramFill size={30} />
       </a>
     </div>
   );
