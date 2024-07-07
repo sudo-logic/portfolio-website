@@ -50,6 +50,12 @@ export async function getStaticProps() {
   try {
     const response = await notion.databases.query({
       database_id: process.env.NOTION_PAGE,
+      sorts: [
+        {
+          property: "Number",
+          direction: "ascending",
+        },
+      ],
     });
 
     const experienceData = response.results.map((result) => {
